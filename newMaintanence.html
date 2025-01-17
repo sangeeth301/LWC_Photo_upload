@@ -1,0 +1,297 @@
+<template>
+    <lightning-record-edit-form
+        object-api-name="Maintenance__c"
+        onsuccess={handleSuccess}
+        onerror={handleError}>
+
+        <!-- Driver Field -->
+        <lightning-input-field field-name="Driver__c"></lightning-input-field>
+
+        <!-- Truck Field -->
+        <lightning-input-field field-name="Truck__c"></lightning-input-field>
+
+        <!-- Issue Field with Help Text -->
+        <lightning-input-field field-name="Issue__c"></lightning-input-field>
+
+        <!-- File Upload (Disabled until record is saved) -->
+        
+        <lightning-file-upload
+            label="Upload Photo"
+            name="photoUploader"
+            accept=".jpg,.png"
+            multiple
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+
+        <lightning-input-field field-name="Mileage__c"></lightning-input-field>
+
+        <!-- Lookup Field for Equipment Assets -->
+        <lightning-input-field field-name="Equipment_Assets__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Estimated_Repair_Costs__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Repair_Comments__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Reason_for_the_Ticket__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Priority__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Mechanic_Assigned__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Work_On_Date__c"></lightning-input-field>
+         
+        <lightning-input-field field-name="Mechanic_Notes__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Completed__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Clone__c"></lightning-input-field>
+
+        <lightning-input-field field-name="Repair_Costs_Approved__c"></lightning-input-field>
+
+        <div style="font-weight:bold; font-size:14px">Truck Down Tracking</div>
+
+            <lightning-input-field field-name="Time_date_the_truck_goes_down__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Error_Type__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Reason_for_the_truck_going_down__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Finish_Repair_date_and_time__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Truck_Down_Tracking_Duration__c"></lightning-input-field>
+
+        <div style="font-weight:bold; font-size:14px">5501 - Truck PPM ChickList</div>
+
+            <lightning-input-field field-name="Tire_Tread_Inflation_Sufficient__c"></lightning-input-field>
+            <lightning-input-field field-name="Tire_Tread_Inflation_Sufficient_Commen__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Brake_Check__c"></lightning-input-field>
+            <lightning-input-field field-name="Brake_check_adjustment_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Fuel_FilterReplaced__c"></lightning-input-field>
+            <lightning-input-field field-name="Fuel_Filter_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="All_NipplesGreased__c"></lightning-input-field>
+            <lightning-input-field field-name="All_Nipples_Greased_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Washer_FluidFull__c"></lightning-input-field>
+            <lightning-input-field field-name="Washer_Fluid_Full_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="OilReplaced__c"></lightning-input-field>
+            <lightning-input-field field-name="Oil_Level_Sufficient_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Coolant_LevelCheck__c"></lightning-input-field>
+            <lightning-input-field field-name="Coolant_Level_Check_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Drain_Air_TankWater__c"></lightning-input-field>
+            <lightning-input-field field-name="Drain_Air_Tank_Water_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Power_SteeringFluid__c"></lightning-input-field>
+            <lightning-input-field field-name="Power_Steering_Tank_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Purge_Valve_CheckReplace__c"></lightning-input-field>
+            <lightning-input-field field-name="Purge_Valve_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Air_Dryer_Filter_CheckReplace__c"></lightning-input-field>
+            <lightning-input-field field-name="Air_Dryer_Filter_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Air_FilterReplaced__c"></lightning-input-field>
+            <lightning-input-field field-name="Air_Filter_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="DEF_PumpFilter__c"></lightning-input-field>
+            <lightning-input-field field-name="DEF_Pump_Filter_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Crankcase_FilterReplaced__c"></lightning-input-field>
+            <lightning-input-field field-name="Crank_Case_Filter_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Transmission_Filter_Replaced__c"></lightning-input-field>
+            <lightning-input-field field-name="AC_Filter_Clean_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="AC_Filter_CleanReplaced__c"></lightning-input-field>
+            <lightning-input-field field-name="CheckClutchForLifeLeftOnItComment5501__c"></lightning-input-field>
+
+            <lightning-input-field field-name="AC_Condenser_Clean__c"></lightning-input-field>
+            <lightning-input-field field-name="AC_Condenser_Clean_Comments__c"></lightning-input-field>
+            
+            <lightning-input-field field-name="Check_Clutch_for_life_left_onit5501__c"></lightning-input-field>
+            <lightning-input-field field-name="Tarp_Stack_Check_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Grease_Clutch__c"></lightning-input-field>
+            <lightning-input-field field-name="Grease_Clutch_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Tarp_StackCheck__c"></lightning-input-field>
+            <lightning-input-field field-name="All_hydraulic_hoses_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="All_Hydraulic_HosesChecked__c"></lightning-input-field>
+            <lightning-input-field field-name="All_air_hoses_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="All_Air_HosesChecked__c"></lightning-input-field>
+
+        <div style="font-weight:bold; font-size:14px">5502 - Route Truck ChickList</div>
+
+            <lightning-input-field field-name="Check_allmirrors__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_all_mirrors_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_windshieldcondition__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_windshield_condition_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Blow_Out_A_C_Filters__c"></lightning-input-field>
+            <lightning-input-field field-name="Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_steering_for_loosenessdamage__c"></lightning-input-field>
+            <lightning-input-field field-name="Steering_wheel_looseness_damage_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_oil_pressuregauge__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_oil_pressure_gage_Comment__c"></lightning-input-field>
+
+           <lightning-input-field field-name="Check_all_belts_for_tightness_andwear__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_allbelts_for_tightnesswear_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_clutch_for_life_left_onit__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_clutch_for_life_left_on_it_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_fuelgauge__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_fuel_gage_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_fueltanks__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_fuel_tanks_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_battery_box_andconnections__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_battery_box_and_connections_Commen__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_all_external_lights_andreflectors__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_external_lights_reflectors_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="CheckSuspension__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_suspension_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_tires_and_rims_fordamage__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_tires_and_rims_for_damage_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_lug_nuts_fortightness__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_lug_nuts_for_tightness_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_for_AirLeaks__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_for_Air_Leaks_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Drain_Air_Tanks__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_for_debris_between_dual_tires_Comm__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_for_debris_between_dualtires__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Brakes_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="CheckBrakes__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_all_hoses_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_allhoses__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_no_hosesCablesHanging_under_Commen__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_all_hoses_cables_aresecured__c"></lightning-input-field>
+            <lightning-input-field field-name="Refill_windshield_fluid_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Refill_windshieldfluid__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_oil_level_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_oillevel__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Coolant_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_CoolantLevel__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_for_Hydraulic_leaks_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_for_Hydraulicleaks__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Hydraulic_Tank_Level_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Hydraulic_TankLevel__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_operation_of_boom_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_operation_ofboom__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Tarp_Tarp_Arms_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Tarp_TarpArms__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_to_ensure_compartment_door_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_to_ensure_compartment_doorssecu__c"></lightning-input-field>
+            <lightning-input-field field-name="Grease_all_nipples_including_leafComment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Grease_all_nipples_including_leafspring__c"></lightning-input-field>
+            <lightning-input-field field-name="Touch_up_body_paint_work_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Reweld_up_any_frame_cracks__c"></lightning-input-field>
+            <lightning-input-field field-name="Driver_Report_Completed_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Touch_up_body_paintwork__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_hubs_for_leaks_Comment__c"></lightning-input-field>
+
+        <div style="font-weight:bold; font-size:14px">5503 - Trip Order</div>
+
+            <lightning-input-field field-name="Quantity_to_Order_295_75R22_5_Drive__c"></lightning-input-field>
+            <lightning-input-field field-name="Quantity_to_Order_11R22_5_Drive__c"></lightning-input-field>
+            <lightning-input-field field-name="Quantity_to_Order_11R24_5_Drive__c"></lightning-input-field>
+            <lightning-input-field field-name="Quantity_to_Order_12R22_5_Drive__c"></lightning-input-field>
+            <lightning-input-field field-name="Quantity_to_Order_295_75R22_5_Steer__c"></lightning-input-field>
+            <lightning-input-field field-name="Quantity_to_Order_315_80R22_5_Steer__c"></lightning-input-field>
+            <lightning-input-field field-name="Quantity_to_Order_425_65R22_5_Steer__c"></lightning-input-field>
+            <lightning-input-field field-name="Quantity_to_Order_ST235_85R16_Drive__c"></lightning-input-field>
+
+         <div style="font-weight:bold; font-size:14px">5504 - Trailer ChickList</div>
+
+            <lightning-input-field field-name="Inspect_Frame__c"></lightning-input-field>
+            <lightning-input-field field-name="Inspect_Frame_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Brakes__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Brakes_Comment2__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Grease_Slack_Adjusters__c"></lightning-input-field>
+            <lightning-input-field field-name="Grease_Slack_Adjusters_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Lights__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Lights_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Landing_Gear__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Landing_Gear_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Cracks_Hoses__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Cracks_Hoses_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Adjust_Brakes__c"></lightning-input-field>
+            <lightning-input-field field-name="Adjust_Brakes_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Drain_Air_Tanks2__c"></lightning-input-field>
+            <lightning-input-field field-name="Drain_Air_Tanks_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Suspension__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Suspension_Comment2__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Tires__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Tires_Comment__c"></lightning-input-field>
+
+             <lightning-input-field field-name="Check_For_Loose_Lugs__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_For_Loose_Lugs_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Hub_Oil__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Hub_Oil_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Tiedown_Straps__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Tiedown_Straps_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Mudflaps__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Mudflaps_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_DOT_Stickers__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_DOT_Stickers_Comment__c"></lightning-input-field>
+
+             <lightning-input-field field-name="Check_Gladhands__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Gladhands_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Grease_Trailer__c"></lightning-input-field>
+            <lightning-input-field field-name="Grease_Trailer_Comment__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Check_Tarp_On_Big_Trailers__c"></lightning-input-field>
+            <lightning-input-field field-name="Check_Tarp_On_Big_Trailers_Comment__c"></lightning-input-field>
+
+        <!-- Save Button -->
+        <div class="sticky-button-container">
+            <lightning-button type="submit" label="Save" variant="brand"></lightning-button>
+        </div>
+    </lightning-record-edit-form>
+</template>
