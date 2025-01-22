@@ -2,7 +2,7 @@
 import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { NavigationMixin } from 'lightning/navigation';
-import linkFilesToRecord from '@salesforce/apex/NewMaintenance.linkFilesToRecord';
+import linkFilesToRecord from '@salesforce/apex/UploadPhotoMaintanence.linkFilesToRecord';
 
 export default class NewMaintenance extends NavigationMixin(LightningElement) {
 
