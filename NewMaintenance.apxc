@@ -1,5 +1,5 @@
 // NewMaintenance.cls
-public with sharing class NewMaintenance {
+public with sharing class UploadPhotoMaintanence {
     
     @AuraEnabled
     public static void linkFilesToRecord(Id recordId, List<Id> fileIds) {
