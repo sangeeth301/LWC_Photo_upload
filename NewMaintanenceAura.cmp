@@ -1,0 +1,5 @@
+<aura:component implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,lightning:actionOverride" access="global" >
+    <div>
+    <c:newMaintanence/>
+    </div>
+</aura:component>
